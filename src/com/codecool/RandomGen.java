@@ -17,4 +17,15 @@ class RandomGen {
         int bound = to - from + 1;
         return random.nextInt(bound) + from;
     }
+
+    /**
+     * Picks and returns a random string from an array of strings.
+     *
+     * @param strings an array of strings
+     *
+     * @return randomly chosen string
+     */
+    static String randomPick(String[] strings) {
+        return strings[random.nextInt(strings.length)];
+    }
 }
