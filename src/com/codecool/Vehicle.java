@@ -2,6 +2,7 @@ package com.codecool;
 
 public class Vehicle {
 
+    private String name;
     private int normalSpeed;
     /*
      TODO: Car: the normal speed of the car. Set to a random number in the constructor between 80-110km/h.
@@ -27,5 +28,21 @@ public class Vehicle {
      */
     public void moveForAnHour(Race race) {
         // TODO
+    }
+
+    public int getNormalSpeed() {
+        return normalSpeed;
+    }
+
+    public void setNormalSpeed(int normalSpeed) {
+        this.normalSpeed = normalSpeed;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
