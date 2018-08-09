@@ -1,6 +1,9 @@
 package com.codecool;
 
+import static com.codecool.RandomGen.*;
+
 public class Motorcycle extends Vehicle {
+
     private static int nameNumber = 1;
 
     public Motorcycle() {
@@ -10,6 +13,7 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public void moveForAnHour(Race race) {
-        // TODO: If it rains, travels with 5-50km/h slower (randomly).
+        int speedLoss = Weather.isRaining() ? randomNumber(5, 50) : 0;
+        updateDistanceTraveled(getNormalSpeed() - speedLoss);
     }
 }

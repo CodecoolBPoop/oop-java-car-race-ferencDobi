@@ -16,5 +16,8 @@ public class Car extends Vehicle {
         setName(randomPick(carNames) + " " + randomPick(carNames));
     }
 
-
+    @Override
+    public void moveForAnHour(Race race) {
+        updateDistanceTraveled(getNormalSpeed());
+    }
 }

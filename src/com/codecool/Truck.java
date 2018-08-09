@@ -4,15 +4,22 @@ import static com.codecool.RandomGen.*;
 
 public class Truck extends Vehicle {
 
-    private int breakdownTurnsLeft; // holds how long its still broken down.
+    private int breakdownTurnsLeft;
 
     public Truck() {
         setName(String.valueOf(randomNumber(0, 1000)));
         setNormalSpeed(100);
     }
 
+    private void updateBreakdownStatus() {
+        if (randomNumber(1, 100) <= 5) breakdownTurnsLeft += 2;
+    }
+
     @Override
     public void moveForAnHour(Race race) {
-        // TODO 5% chance of breaking down for 2 hours.
+        if (breakdownTurnsLeft == 0) {
+            updateBreakdownStatus();
+            updateDistanceTraveled(getNormalSpeed());
+        } else breakdownTurnsLeft--;
     }
 }
