@@ -45,8 +45,13 @@ public class Race {
         }
     }
 
-    private boolean isThereABrokenTruck() {
-        // TODO
+    boolean isThereABrokenTruck() {
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.getClass().toString().contains("Truck")) {
+                Truck truck = (Truck) vehicle;
+                if (truck.getBreakdownTurnsLeft() > 0) return true;
+            }
+        }
         return false;
     }
 

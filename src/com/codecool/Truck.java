@@ -15,11 +15,15 @@ public class Truck extends Vehicle {
         if (randomOccurrence(5)) breakdownTurnsLeft += 2;
     }
 
+    int getBreakdownTurnsLeft() {
+        return breakdownTurnsLeft;
+    }
+
     @Override
     public void moveForAnHour(Race race) {
         if (breakdownTurnsLeft == 0) {
+            updateDistanceTraveled(race.isThereABrokenTruck() ? 75 : getNormalSpeed());
             updateBreakdownStatus();
-            updateDistanceTraveled(getNormalSpeed());
         } else breakdownTurnsLeft--;
     }
 }

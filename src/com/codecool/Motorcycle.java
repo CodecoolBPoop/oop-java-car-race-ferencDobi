@@ -14,6 +14,6 @@ public class Motorcycle extends Vehicle {
     @Override
     public void moveForAnHour(Race race) {
         int speedLoss = Weather.isRaining() ? randomNumber(5, 50) : 0;
-        updateDistanceTraveled(getNormalSpeed() - speedLoss);
+        updateDistanceTraveled((race.isThereABrokenTruck() ? 75 : getNormalSpeed()) - speedLoss);
     }
 }
