@@ -1,9 +1,15 @@
 package com.codecool;
 
-public class Motorcycle {
-    public static int nameNumber; // The number of the instance created. Used for its name.
+public class Motorcycle extends Vehicle {
+    private static int nameNumber = 1;
 
-    Motorcycle() {
-        // TODO
+    public Motorcycle() {
+        setName("Motorcycle " + nameNumber++);
+        setNormalSpeed(100);
+    }
+
+    @Override
+    public void moveForAnHour(Race race) {
+        // TODO: If it rains, travels with 5-50km/h slower (randomly).
     }
 }
