@@ -36,4 +36,10 @@ public abstract class Vehicle {
     void updateDistanceTraveled(int distance) {
         distanceTraveled += distance;
     }
+
+    @Override
+    public String toString() {
+        String type = getClass().toString().split("\\.")[2];
+        return getName() + " (" + type + "): " + getDistanceTraveled() + " km travelled.";
+    }
 }
