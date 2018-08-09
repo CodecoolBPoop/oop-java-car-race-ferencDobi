@@ -1,6 +1,13 @@
 package com.codecool;
 
-public class Weather {
-    static void setRaining() {} // TODO: 30% chance of rain.
-    static boolean isRaining() { return false; } // TODO: is it raining currently.
+import static com.codecool.RandomGen.*;
+
+class Weather {
+    private static boolean raining;
+
+    static void setRaining() {
+       raining = randomOccurrence(30);
+    }
+
+    static boolean isRaining() { return raining; }
 }
