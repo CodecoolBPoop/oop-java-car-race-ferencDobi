@@ -39,7 +39,7 @@ public abstract class Vehicle {
 
     @Override
     public String toString() {
-        String type = getClass().toString().split("\\.")[2];
+        String type = getClass().getSimpleName();
         return getName() + " (" + type + "): " + getDistanceTraveled() + " km travelled.";
     }
 }
