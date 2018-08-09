@@ -28,4 +28,15 @@ class RandomGen {
     static String randomPick(String[] strings) {
         return strings[random.nextInt(strings.length)];
     }
+
+    /**
+     * Returns true with the given percentage of chance, or false otherwise.
+     *
+     * @param chancePercentage a number between 1 and 100
+     *
+     * @return a (weighted) random boolean
+     */
+    static boolean randomOccurrence(int chancePercentage) {
+        return randomNumber(1, 100) <= chancePercentage;
+    }
 }

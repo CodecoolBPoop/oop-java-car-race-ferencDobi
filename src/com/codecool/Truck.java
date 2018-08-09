@@ -12,7 +12,7 @@ public class Truck extends Vehicle {
     }
 
     private void updateBreakdownStatus() {
-        if (randomNumber(1, 100) <= 5) breakdownTurnsLeft += 2;
+        if (randomOccurrence(5)) breakdownTurnsLeft += 2;
     }
 
     @Override
