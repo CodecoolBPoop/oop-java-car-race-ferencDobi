@@ -29,7 +29,7 @@ public class Race {
             Weather.setRaining();
             vehicles.forEach(vehicle -> vehicle.moveForAnHour(this));
             vehicles.sort(Comparator.comparing(Vehicle::getDistanceTraveled).reversed());
-            System.out.println("After " + (i + 1) + " hours, the leader of the race is: " + vehicles.get(0).toString());
+            System.out.println("After " + (i + 1) + " hours, the leader of the race is: " + vehicles.get(0));
         }
     }
 
@@ -40,7 +40,7 @@ public class Race {
         System.out.println("\nFinal placements: ");
         int placement = 1;
         for (Vehicle vehicle : vehicles) {
-            System.out.println(placement + ". " + vehicle.toString());
+            System.out.println(placement + ". " + vehicle);
             placement++;
         }
     }
